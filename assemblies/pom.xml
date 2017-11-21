@@ -4,11 +4,14 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>pentaho</groupId>
-    <artifactId>pentaho-metadata-editor-assemblies</artifactId>
+    <artifactId>pentaho-metadata-editor</artifactId>
     <version>8.1-SNAPSHOT</version>
   </parent>
   <groupId>pentaho</groupId>
-  <artifactId>pme-ce</artifactId>
+  <artifactId>pentaho-metadata-editor-assemblies</artifactId>
   <version>8.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Pentaho Metadata Editor Assemblies</name>
+  
   
 </project>
