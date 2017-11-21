@@ -62,11 +62,30 @@
 	  </includes>
 	  <outputFileNameMapping>swt.jar</outputFileNameMapping>
 	</dependencySet>
+	<dependencySet>
+	  <outputDirectory>plugins</outputDirectory>
+	  <includes>
+	    <include>pentaho:pentaho-big-data-plugin:zip:${project.version}</include>
+		<include>pentaho:pentaho-cassandra-plugin:zip:${project.version}</include>
+	  </includes>
+	  <unpack>true</unpack>
+	</dependencySet>
+	<dependencySet>
+	  <outputDirectory>plugins</outputDirectory>
+	  <includes>
+	    <include>pentaho:pdi-dataservice-client-plugin</include>
+	  </includes>
+	</dependencySet>
   </dependencySets>
   <fileSets>
     <fileSet>
 	  <directory>src/main/resources</directory>
-	  <outputDirectory></outputDirectory>
+	  <outputDirectory>.</outputDirectory>
+	</fileSet>
+	<!-- Include pentaho-karaf-assembly-pme in system folder -->
+	<fileSet>
+	  <directory>${project.build.directory}/system</directory>
+	  <outputDirectory>system</outputDirectory>
 	</fileSet>
   </fileSets>
 
