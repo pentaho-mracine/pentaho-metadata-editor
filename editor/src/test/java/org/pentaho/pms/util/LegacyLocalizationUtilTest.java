@@ -59,7 +59,7 @@ public class LegacyLocalizationUtilTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testLegacyLocalization() throws Exception {
-    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "package-res/samples/steel-wheels.xmi");
+    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "assemblies/pme-ce/src/main/resources/samples/steel-wheels.xmi");
     LegacyLocalizationUtil localeUtil = new LegacyLocalizationUtil();
     
     String locale = "en_US";
@@ -91,7 +91,7 @@ public class LegacyLocalizationUtilTest {
   
   @Test
   public void testLegacyLocalizationNullLocale() throws Exception {
-    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "package-res/samples/steel-wheels.xmi");
+    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "assemblies/pme-ce/src/main/resources/samples/steel-wheels.xmi");
     LegacyLocalizationUtil localeUtil = new LegacyLocalizationUtil();
     
     String locale = "en_US";
@@ -112,7 +112,7 @@ public class LegacyLocalizationUtilTest {
   @Test
   public void testLegacyLocalizationUnknownLocale() throws Exception {
     // Expected results should be the same as en_US as it is the default for non-overidden values
-    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "package-res/samples/steel-wheels.xmi");
+    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "assemblies/pme-ce/src/main/resources/samples/steel-wheels.xmi");
     LegacyLocalizationUtil localeUtil = new LegacyLocalizationUtil();
     
     String locale = "abc_XYZ";

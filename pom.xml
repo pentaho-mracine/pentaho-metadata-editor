@@ -8,7 +8,7 @@
     <version>8.1-SNAPSHOT</version>
   </parent>
   <groupId>pentaho</groupId>
-  <artifactId>pentaho-metadata-editor</artifactId>
+  <artifactId>pentaho-metadata-editor-parent</artifactId>
   <version>8.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>${project.artifactId}</name>
@@ -34,9 +34,7 @@
     <dom4j.version>1.6.1</dom4j.version>
     <edtftpj.version>2.0.2</edtftpj.version>
     <ehcache.version>1.1</ehcache.version>
-    <h2.version>1.0.20070617</h2.version>
     <hibernate.version>3.2.2.ga</hibernate.version>
-    <hsqldb.version>2.3.2</hsqldb.version>
     <javadbf.version>0.4.0</javadbf.version>
     <javassist.version>3.20.0-GA</javassist.version>
     <jaxen.version>1.1.1</jaxen.version>
@@ -444,23 +442,6 @@
     </dependency>
     
     <dependency>
-      <groupId>org.hsqldb</groupId>
-      <artifactId>hsqldb</artifactId>
-      <version>${hsqldb.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>${h2.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    
-    <dependency>
       <groupId>xmlpull</groupId>
       <artifactId>xmlpull</artifactId>
       <version>${xmlpull.version}</version>
@@ -531,33 +512,9 @@
     
     <!-- Include jar and zip artifacts -->
     <dependency>
-      <groupId>pentaho</groupId>
-      <artifactId>pentaho-big-data-plugin</artifactId>
-      <version>${project.version}</version>
-      <type>zip</type>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
       <groupId>commons-configuration</groupId>
       <artifactId>commons-configuration</artifactId>
       <version>${commons-configuration.version}</version>
-      <exclusions>
-        <exclusion>
-          <groupId>*</groupId>
-          <artifactId>*</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-    <dependency>
-      <groupId>pentaho</groupId>
-      <artifactId>pentaho-cassandra-plugin</artifactId>
-      <version>${project.version}</version>
-      <type>zip</type>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>

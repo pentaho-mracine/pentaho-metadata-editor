@@ -47,7 +47,7 @@ import org.pentaho.pms.util.VersionHelper;
 public class Splash {
   private Shell splash;
 
-  public Splash( Display display ) {
+  public Splash( final Display display ) {
     Rectangle displayBounds = display.getPrimaryMonitor().getBounds();
 
     final Image splashImage = GUIResource.getInstance().getImageMetaSplash(); // new Image(display, getClass().getResourceAsStream(Const.IMAGE_DIRECTORY + "MetaSplash.png"));
