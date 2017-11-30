@@ -9,6 +9,10 @@
   <baseDirectory>metadata-editor</baseDirectory>
   <fileSets>
     <fileSet>
+	  <directory>${project.build.directory}/launcher</directory>
+	  <outputDirectory>launcher</outputDirectory>
+	</fileSet>
+    <fileSet>
 	  <directory>${project.build.directory}/libs</directory>
 	  <outputDirectory>.</outputDirectory>
 	</fileSet>
@@ -16,6 +20,10 @@
       <directory>src/main/resources</directory>
       <outputDirectory>.</outputDirectory>
     </fileSet>
+	<fileSet>
+	  <directory>${project.build.directory}/plugins</directory>
+	  <outputDirectory>plugins</outputDirectory>
+	</fileSet>
     <!-- Include pentaho-karaf-assembly-pme in system folder -->
     <fileSet>
       <directory>${project.build.directory}/system</directory>
