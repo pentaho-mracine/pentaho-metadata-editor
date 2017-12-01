@@ -26,8 +26,8 @@
 	</fileSet>
     <!-- Include pentaho-karaf-assembly-pme in system folder -->
     <fileSet>
-      <directory>${project.build.directory}/system</directory>
-      <outputDirectory>system</outputDirectory>
+      <directory>${project.build.directory}/pentaho-karaf-assembly</directory>
+      <outputDirectory>system/karaf</outputDirectory>
     </fileSet>
   </fileSets>
 </assembly>

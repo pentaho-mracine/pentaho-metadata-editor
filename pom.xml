@@ -1000,4 +1000,7 @@
       <type>zip</type>
     </dependency>
   </dependencies>
+  <profiles>
+    <profile></profile>
+  </profiles>
 </project>

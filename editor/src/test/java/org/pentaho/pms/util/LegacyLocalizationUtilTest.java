@@ -59,13 +59,13 @@ public class LegacyLocalizationUtilTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testLegacyLocalization() throws Exception {
-    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "package-res/samples/steel-wheels.xmi");
+    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "src/test/resources/samples/steel-wheels.xmi");
     LegacyLocalizationUtil localeUtil = new LegacyLocalizationUtil();
     
     String locale = "en_US";
     Properties props = localeUtil.exportLocalizedProperties(schemaMeta, locale);
     
-    Assert.assertEquals(275, props.size());
+    Assert.assertEquals(279, props.size());
     Assert.assertEquals("Customer", props.get("[LogicalModel-BV_ORDERS].[Category-BC_CUSTOMER_W_TER_].[name]"));
     Assert.assertFalse("IPhysicalModel-null should not exist as such",props.containsKey("[IPhysicalModel-null].[PT_DEPARTMENT_MANAGERS].[MANAGER_NAME].[name]"));
   }
@@ -91,7 +91,7 @@ public class LegacyLocalizationUtilTest {
   
   @Test
   public void testLegacyLocalizationNullLocale() throws Exception {
-    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "package-res/samples/steel-wheels.xmi");
+    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "src/test/resources/samples/steel-wheels.xmi");
     LegacyLocalizationUtil localeUtil = new LegacyLocalizationUtil();
     
     String locale = "en_US";
@@ -112,13 +112,13 @@ public class LegacyLocalizationUtilTest {
   @Test
   public void testLegacyLocalizationUnknownLocale() throws Exception {
     // Expected results should be the same as en_US as it is the default for non-overidden values
-    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "package-res/samples/steel-wheels.xmi");
+    SchemaMeta schemaMeta = loadLegacyMetadataModel("Steel Wheels", "src/test/resources/samples/steel-wheels.xmi");
     LegacyLocalizationUtil localeUtil = new LegacyLocalizationUtil();
     
     String locale = "abc_XYZ";
     Properties props = localeUtil.exportLocalizedProperties(schemaMeta, locale);
     
-    Assert.assertEquals(275, props.size());
+    Assert.assertEquals(279, props.size());
     Assert.assertEquals("Customer", props.get("[LogicalModel-BV_ORDERS].[Category-BC_CUSTOMER_W_TER_].[name]"));
   }
   
