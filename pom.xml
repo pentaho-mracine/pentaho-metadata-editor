@@ -15,6 +15,11 @@
   <description></description>
   <url>http://www.pentaho.com</url>
 
+  <modules>
+    <module>editor</module>
+    <module>assemblies</module>
+  </modules>
+
   <scm>
     <connection>scm:git:git@github.com:pentaho/pentaho-metadata-editor.git</connection>
     <developerConnection>scm:git:git@github.com:pentaho/pentaho-metadata-editor.git</developerConnection>
@@ -46,6 +51,9 @@
     <junit.version>4.4</junit.version>
     <jxl.version>2.5.7</jxl.version>
     <kafka-clients.version>0.10.2.1</kafka-clients.version>
+    <license.header.file>license/templates/licenseHeader.txt</license.header.file>
+    <license.inception.year>2002</license.inception.year>
+    <license-maven-plugin.version>2.3</license-maven-plugin.version>
     <livetribe-jsr223.version>2.0.6</livetribe-jsr223.version>
     <log4j.version>1.2.17</log4j.version>
     <mail.version>1.4.7</mail.version>
@@ -71,7 +79,30 @@
   </properties>
 
   <build>
-    <!-- put any custom build configurations here -->
+    <plugins>
+      <plugin>
+        <groupId>com.mycila</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <version>${license-maven-plugin.version}</version>
+        <configuration>
+          <header>${license.header.file}</header>
+          <headerDefinitions>
+            <headerDefinition>license/styles/javadoc_style_license_header.xml</headerDefinition>
+          </headerDefinitions>
+          <properties>
+            <project.inceptionYear>${license.inception.year}</project.inceptionYear>
+          </properties>
+          <useDefaultExcludes>true</useDefaultExcludes>
+          <includes>
+            <include>src/main/java/**</include>
+            <include>src/test/java/**</include>
+            <include>src/it/java/**</include>
+            <include>src/main/javascript/**</include>
+            <include>src/test/javascript/**</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <dependencies>
@@ -1000,7 +1031,20 @@
       <type>zip</type>
     </dependency>
   </dependencies>
-  <profiles>
-    <profile></profile>
-  </profiles>
+
+  <repositories>
+    <repository>
+      <id>pentaho-public</id>
+      <name>Pentaho Public</name>
+      <url>http://nexus.pentaho.org/content/groups/omni</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>interval:15</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 </project>

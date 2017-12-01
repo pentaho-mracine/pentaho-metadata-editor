@@ -11,6 +11,7 @@
   <artifactId>pentaho-metadata-editor-assemblies</artifactId>
   <version>8.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Pentaho Metadata Editor Assemblies</name>
-
+  <modules>
+    <module>pme-ce</module>
+  </modules>
 </project>
